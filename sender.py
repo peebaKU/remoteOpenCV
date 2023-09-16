@@ -23,7 +23,7 @@ class ThreadCamera:
     def mthread_reading(self):
         self.ret, self.frame = self.cap.read()
 
-camera = ThreadCamera(0)
+camera = cv2.VideoCapture(2)
 
 def generate_frames():
     while True:
@@ -39,7 +39,7 @@ def video():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.104', port=8080)
+    app.run(host='192.168.1.101', port=8080)
 
 
  
